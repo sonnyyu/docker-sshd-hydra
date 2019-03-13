@@ -3,4 +3,4 @@ MAINTAINER Sonny Yu <sonnyyuirm@gmail.com>
 RUN  apt-get update -y && \
 apt-get install -y hydra
 ADD 500-worst-passwords.txt /root/500-worst-passwords.txt
-ENTRYPOINT ["/bin/bash"]
+ENTRYPOINT ["/usr/bin/hydra"]
