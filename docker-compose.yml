@@ -19,12 +19,11 @@ services:
         splunk-url: "https://127.0.0.1:8088"
         splunk-insecureskipverify: "true"
         splunk-format: "raw"
-  docker-nmap:
-    hostname: docker-nmap
+  docker-hydra:
+    hostname: docker-hydra
     build: 
-      context: ./nmap
+      context: ./hydra
       dockerfile: Dockerfile
-    image: docker-nmap
-    #command: /usr/bin/nmap --script=mysql-brute.nse 10.145.89.1
-    container_name: docker-nmap
+    image: docker-hydra
+    container_name: docker-hydra
     restart: "no"
