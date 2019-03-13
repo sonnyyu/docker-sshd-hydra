@@ -22,10 +22,6 @@ docker system prune -f
 
 sudo rm -rf /var/lib/docker/volumes/*
 
-docker exec -it docker-splunk /bin/bash
+docker run -it docker-hydra
 
-docker run -it --rm docker-nmap -p 2222 --script=ssh-brute.nse  127.0.0.1 
-
-curl -k  https://10.145.89.1:8088/services/collector/event -H "Authorization: Splunk 3f066d2a-c871-4800-87fc-e6be5fa69f1b" -d '{"event": "hello world"}'
-
-{"text": "Success", "code": 0}
+hydra -l root -P /root/500-worst-passwords.txt -s 2222 10.145.89.1 ssh
