@@ -6,6 +6,7 @@ services:
       context: ./sshd
       dockerfile: Dockerfile
     image: docker-sshd
+    #command: sleep 40
     container_name: docker-sshd
     restart: always
     ports:
